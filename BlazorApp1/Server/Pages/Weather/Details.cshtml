@@ -1,0 +1,37 @@
+﻿@page
+@model BlazorApp1.Server.Pages.Weather.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>WeatherForecast</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherForecast.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherForecast.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherForecast.TemperatureC)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherForecast.TemperatureC)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.WeatherForecast.Summary)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.WeatherForecast.Summary)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.WeatherForecast.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

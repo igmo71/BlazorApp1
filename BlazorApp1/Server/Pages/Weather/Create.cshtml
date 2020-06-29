@@ -1,0 +1,44 @@
+﻿@page
+@model BlazorApp1.Server.Pages.Weather.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>WeatherForecast</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="WeatherForecast.Date" class="control-label"></label>
+                <input asp-for="WeatherForecast.Date" class="form-control" />
+                <span asp-validation-for="WeatherForecast.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeatherForecast.TemperatureC" class="control-label"></label>
+                <input asp-for="WeatherForecast.TemperatureC" class="form-control" />
+                <span asp-validation-for="WeatherForecast.TemperatureC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WeatherForecast.Summary" class="control-label"></label>
+                <input asp-for="WeatherForecast.Summary" class="form-control" />
+                <span asp-validation-for="WeatherForecast.Summary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
